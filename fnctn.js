@@ -42,3 +42,29 @@
 // let y = parseInt(prompt("enter num2"))
 // let z = parseInt(prompt("enter num3"))
 // calcAvg(x,y,z)
+
+//table of ay number upto any number
+// function table(num,times)
+// {
+//     let pro;
+//     // alert(typeof(times))
+//     for(let i = 1;i <=times; i++)
+//     {
+//         pro = num*i;
+//         console.log(`${num} * ${i} = ${pro}`);
+//     }
+// }
+// let num = parseInt(prompt("Enter the num to print table of"))
+// let times = parseInt(prompt("Enter the num to print table no. of times"))
+// table(num,times)
+
+// function with args
+let a = parseInt(prompt("enter num1 ")) //without parseInt it takes input as string
+let b = parseInt(prompt("enter num2 "))
+alert
+function findSum(x,y)
+{
+    let sum = x+y
+    return sum;
+}
+alert(findSum(a,b))

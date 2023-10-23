@@ -8,4 +8,5 @@ function sum(n)
     return sum;
 }
 
+
 alert(`sum of 1 to ${limit} = ${sum(limit)}`)
