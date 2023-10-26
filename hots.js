@@ -8,4 +8,4 @@ let greet = function hullo(){
     console.log("helllloooo");
 }
 
-greeting(greet,10)
+greeting(greet,999);
