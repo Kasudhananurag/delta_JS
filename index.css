@@ -1,0 +1,15 @@
+*{
+    text-align: center;
+}
+div {
+    margin: auto;
+    border: 2px solid black;
+    width: 400px;
+    margin-top: 20px;
+    height: 200px;
+}
+
+input
+{
+    margin-top: 20px;
+}

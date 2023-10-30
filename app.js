@@ -1,47 +1,39 @@
-let todo = [];
+let btn = document.querySelector('button')
+let div = document.querySelector("div");
+// console.dir(btn)
 
-let req = prompt("please enter your request!");
+// // btn.onclick = function () { console.log("button was clicked") }
 
-console.log(req);
+// function sayName(){
+//     alert("hello")
+// }
+// btn.addEventListener("click",sayName)
 
-while(true){
-    if(req == "quit")
-    {
-        console.log("quitting app");
-        break;
-    }
+btn.addEventListener("click", function() {
+    let randomColor = getRandomColor();
+    let h3 = document.querySelector("h2");
+    h3.innerText = randomColor;
 
-    if(req == "list")
-    {
-        console.log("___________");
-        for(let i = 0; i<todo.length;i++)
-        {
-            console.log(i,"-",todo[i]);
-        }
-        console.log("___________")
-    }
-
-    else if (req == "add")
-    {
-        console.log("adding")
-        let task = prompt("Enter the task u want to add");
-        todo.push(task);
-        console.log("task added");
-    }
-
-    else if( req == "delete")
-    {
-        console.log("enter the index of task you want to delete");
-        let idx = prompt("enter the index of task you want to delete");
-        todo.splice(idx,1); 
-        console.log("task deleted");
-    }
-
-    else{
-        console.log("wrong request!!")
-    }
-
-    req = prompt("please enter your request!");
+    
+    div.style.backgroundColor = randomColor;
 
 
+})
+
+function getRandomColor(){
+    let r,g,b;
+    r = Math.floor(Math.random()*255);
+    g = Math.floor(Math.random()*255);
+    b = Math.floor(Math.random()*255);
+
+    let color = `rgb(${r},${g},${b})`;
+
+    return color;
 }
+
+let inp = document.querySelector("input");
+inp.addEventListener("keydown", function(event) {
+    console.log(event.key);
+    console.log(event.code);
+    console.log("key was released")
+})
