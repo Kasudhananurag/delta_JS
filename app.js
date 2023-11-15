@@ -1,39 +1,71 @@
-let btn = document.querySelector('button')
-let div = document.querySelector("div");
-// console.dir(btn)
+//adding event listener for the button
+let btn = document.querySelector("button");
 
-// // btn.onclick = function () { console.log("button was clicked") }
-
-// function sayName(){
-//     alert("hello")
-// }
-// btn.addEventListener("click",sayName)
-
-btn.addEventListener("click", function() {
-    let randomColor = getRandomColor();
-    let h3 = document.querySelector("h2");
-    h3.innerText = randomColor;
-
-    
-    div.style.backgroundColor = randomColor;
+btn.addEventListener("click", async () => {
+    let facts = await getFacts();
+    // alert(facts)
+    let p = document.querySelector("#result");
+    p.innerText = facts;
+});
 
 
-})
+// using axios
+// import axios from 'axios';
+let url = "https://catfact.ninja/fact";
 
-function getRandomColor(){
-    let r,g,b;
-    r = Math.floor(Math.random()*255);
-    g = Math.floor(Math.random()*255);
-    b = Math.floor(Math.random()*255);
-
-    let color = `rgb(${r},${g},${b})`;
-
-    return color;
+async function getFacts()
+{
+    try{
+        let res = await axios.get(url);
+        return res.data.fact;
+    } catch(e) {
+        return "NO FACT FOUND";
+    }
 }
 
-let inp = document.querySelector("input");
-inp.addEventListener("keydown", function(event) {
-    console.log(event.key);
-    console.log(event.code);
-    console.log("key was released")
-})
+getFacts();
+
+// find below code for firt request and then catch
+// let url = "https://catfact.ninja/fact";
+
+// fetch(url)
+//     .then((resp) => {
+//         console.log(resp)
+//         resp.json().then((data)=>{
+//             console.log(data);
+//         })
+//     })
+//     .catch((error)=>{
+//         console.log("ERROR : ",error)
+//     });
+
+// find below code for async await
+
+// let url = "https://catfact.ninja/fact";
+
+// async function getFacts(){
+//     let res = await fetch(url);
+//     console.log(res);
+//     let data = await res.json();
+//     console.log(data.fact);
+// }
+
+// getFacts()
+// console.log("signing off")
+//find below code for async wait and try catch
+// let url = "https://catfact.ni   nja/fact";
+
+// async function getFacts(){
+//     try{
+//         let res = await fetch(url);
+//         console.log(res);
+//         let data = await res.json();
+//         console.log(data.fact);
+//     } catch(e){
+//         console.log("Error : ",e);
+//     }
+// }
+
+// getFacts()
+// console.log("signing off")
+
